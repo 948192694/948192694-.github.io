@@ -2,53 +2,99 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>无标题文档</title>
+<title>简历</title>
 </head>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <style type="text/css">
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
+body { margin:0; padding:0; }
+ul , li { list-style:none;}
+.clearfix{*zoom:1;}
+.clearfix::after{ clear: both; display: block; height: 0; content: ''; visibility: hidden;}
+.wrapper { margin:0 auto; background:#e7e8ea; width:850px;}
+.left-section { float:left; background:#2f3a40; color:#fff; width:33.33%; padding-bottom:20%;}
+.left-section  .head { text-align:center; }
+.left-section  .head .figure { width:150px; height:150px; border-radius:100%; background:#fff; margin:8% auto;}
+.left-section  .head .name { font-size:34px; text-shadow:10px 5px #6f6f6f;}
+.left-section dl { margin-top:50px; line-height:1.8;  }
+.left-section dl dt { font-size:20px; padding-left:10%; width:70%;}
+.left-section dl dd { margin-top:10px; padding-left:10%; margin-left:0;}
+.left-section dl dd ul { background:#5c85a3; width:70%; padding-left:0; margin:0;}
+.left-section dl dd ul li { background:#917760; height:5px;}
+.left-section dl dd:nth-of-type(1) ul li { width:72%;}
+.left-section dl dd:nth-of-type(2) ul li { width:65%;}
+.left-section dl dd:nth-of-type(3) ul li { width:85%;}
+
+.right-content { float:right; width:66.66%; }
+.right-content .box { margin:10% 5%;}
+.right-content .box h1 { font-size:30px;}
+.right-content .box p { font-weight:bold; font-size:14px; line-height:1.5;}
+
+.red { background:#fe7676;}
+.green { background:#adc647;}
+.orange { background:#f6961e;}
 </style>
-
 <body>
-
-
-<div id="app-7">
-  <ol>
-    <!--
-      现在我们为每个 todo-item 提供 todo 对象
-      todo 对象是变量，即其内容可以是动态的。
-      我们也需要为每个组件提供一个“key”，稍后再
-      作详细解释。
-    -->
-    <todo-item
-      v-for="item in groceryList"
-      v-bind:todo="item"
-      v-bind:key="item.id">
-    </todo-item>
-  </ol>
+<div class="wrapper clearfix">
+  <div class="left-section">
+    <div class="head">
+      <div class="figure"></div>
+      <div class="name"><strong>初门</strong></div>
+      <p>web前端</p>
+    </div>
+    <dl class="box">
+      <dt class="red">基本信息</dt>
+      <dd>姓名：<strong>初门</strong></dd>
+      <dd>年龄：<strong>26</strong></dd>
+      <dd>学历：<strong>本科</strong></dd>
+      <dd>学校：<strong>百度前端技术学院</strong></dd>
+    </dl>
+    <dl class="box">
+      <dt class="green">联系方式</dt>
+      <dd>电话：<strong>18600000000</strong></dd>
+      <dd>邮箱：<strong>baidu@baidu.com</strong></dd>
+      <dd>qq：<strong>123456789</strong></dd>
+      <dd>微信：<strong>123456789</strong></dd>
+    </dl>
+    <dl class="box">
+      <dt class="orange">专业技能</dt>
+      <dd>
+        <p>js</p>
+        <ul><li></li></ul>
+      </dd>
+      <dd>
+        <p>jq</p>
+        <ul><li></li></ul>
+      </dd>
+      <dd>
+        <p>vue</p>
+        <ul><li></li></ul>
+      </dd>    
+    </dl>
+  </div>
+  <div class="right-content">
+    <div class="box">
+      <h1>自我评价</h1>
+      <p>1、什么是CSS，CSS是如何工作的？</p>    
+      <p>2、CSS的基本语法是怎样的？</p>
+      <p>3、CSS选择器是什么概念，简单选择器和属性选择器是什么？</p>
+      <p>4、文本样式都有哪些相关属性，对应哪些值？</p>
+    </div>
+    <div class="box">
+      <h1>获得荣誉</h1>
+      <p>1、什么是CSS，CSS是如何工作的？</p>    
+      <p>2、CSS的基本语法是怎样的？</p>
+      <p>3、CSS选择器是什么概念，简单选择器和属性选择器是什么？</p>
+      <p>4、文本样式都有哪些相关属性，对应哪些值？</p>
+    </div>
+    <div class="box">
+      <h1>项目经验</h1>
+      <p>项目A：</p>
+      <p>项目时间：2017.1-2017.8</p>
+      <p>项目描述：在项目A中负责了xxxxx</p>
+      <p>项目B：</p>
+      <p>项目时间：2017.8-2018.7</p>
+      <p>项目描述：在项目B中负责了xxxxx</p>
+    </div>
+  </div>
 </div>
-
-<script type="text/javascript">
-Vue.component('todo-item', {
-  props: ['todo'],
-  template: '<li>{{ todo.text }}</li>'
-})
-
-var app7 = new Vue({
-  el: '#app-7',
-  data: {
-    groceryList: [
-      { id: 0, text: '蔬菜' },
-      { id: 1, text: '奶酪' },
-      { id: 2, text: '随便其它什么人吃的东西' }
-    ]
-  }
-})
-</script>
 </body>
 </html>
